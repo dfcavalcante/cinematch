@@ -1,0 +1,1033 @@
+{
+  "seed": 42,
+  "split": "80/20 aleatório por usuário (piso no tamanho de teste)",
+  "train": 80367,
+  "test": 19633,
+  "users": 943,
+  "items": 1682,
+  "audit": {
+    "raw": 100000,
+    "invalid": 0,
+    "duplicates": 0,
+    "clean": 100000
+  },
+  "parameters": {
+    "k": 40,
+    "shrinkage": 10,
+    "prior": 20,
+    "relevance": 4,
+    "ranking": "soma ponderada dos desvios dos vizinhos (votos)"
+  },
+  "environment": {
+    "python": "3.13.14",
+    "numpy": "2.4.5"
+  },
+  "data_sha256": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490",
+  "metrics": {
+    "user_knn": {
+      "mae": 0.75667444565536,
+      "rmse": 0.9752970346473441,
+      "precision@10": 0.18878101402373246,
+      "recall@10": 0.1850372656159378,
+      "ndcg@10": 0.25967763318312986,
+      "catalog_coverage@10": 0.16058394160583941,
+      "ranking_users": 927
+    },
+    "media_bayesiana": {
+      "mae": 0.8309799382954256,
+      "rmse": 1.0343745802129432,
+      "precision@10": 0.08360302049622438,
+      "recall@10": 0.06305797762160086,
+      "ndcg@10": 0.09798733972366762,
+      "catalog_coverage@10": 0.023114355231143552,
+      "ranking_users": 927
+    },
+    "mais_populares": {
+      "mae": null,
+      "rmse": null,
+      "precision@10": 0.12168284789644014,
+      "recall@10": 0.12470747268721814,
+      "ndcg@10": 0.15688905772432674,
+      "catalog_coverage@10": 0.029197080291970802,
+      "ranking_users": 927
+    }
+  },
+  "examples": [
+    {
+      "user": 1,
+      "train_size": 218,
+      "test_size": 54,
+      "relevant_test": 27,
+      "metrics": {
+        "precision@10": 0.4,
+        "recall@10": 0.14814814814814814,
+        "ndcg@10": 0.5384313152574521
+      },
+      "history_sample": [
+        {
+          "title": "Star Trek: First Contact (1996)",
+          "rating": 4
+        },
+        {
+          "title": "Smilla's Sense of Snow (1997)",
+          "rating": 2
+        },
+        {
+          "title": "Doom Generation, The (1995)",
+          "rating": 2
+        },
+        {
+          "title": "Field of Dreams (1989)",
+          "rating": 3
+        },
+        {
+          "title": "Glengarry Glen Ross (1992)",
+          "rating": 4
+        }
+      ],
+      "recommendations": [
+        {
+          "id": 98,
+          "title": "Silence of the Lambs, The (1991)",
+          "genres": [
+            "Drama",
+            "Suspense"
+          ],
+          "score": 4.6828,
+          "support": 30,
+          "count": 318,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 183,
+          "title": "Alien (1979)",
+          "genres": [
+            "Ação",
+            "Terror",
+            "Ficção científica",
+            "Suspense"
+          ],
+          "score": 4.493,
+          "support": 26,
+          "count": 231,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 89,
+          "title": "Blade Runner (1982)",
+          "genres": [
+            "Noir",
+            "Ficção científica"
+          ],
+          "score": 4.4084,
+          "support": 27,
+          "count": 215,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 180,
+          "title": "Apocalypse Now (1979)",
+          "genres": [
+            "Drama",
+            "Guerra"
+          ],
+          "score": 4.7668,
+          "support": 18,
+          "count": 183,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 483,
+          "title": "Casablanca (1942)",
+          "genres": [
+            "Drama",
+            "Romance",
+            "Guerra"
+          ],
+          "score": 4.7208,
+          "support": 17,
+          "count": 194,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 318,
+          "title": "Schindler's List (1993)",
+          "genres": [
+            "Drama",
+            "Guerra"
+          ],
+          "score": 4.4271,
+          "support": 21,
+          "count": 237,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 651,
+          "title": "Glory (1989)",
+          "genres": [
+            "Ação",
+            "Drama",
+            "Guerra"
+          ],
+          "score": 4.4591,
+          "support": 20,
+          "count": 141,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 28,
+          "title": "Apollo 13 (1995)",
+          "genres": [
+            "Ação",
+            "Drama",
+            "Suspense"
+          ],
+          "score": 4.2654,
+          "support": 25,
+          "count": 216,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 603,
+          "title": "Rear Window (1954)",
+          "genres": [
+            "Mistério",
+            "Suspense"
+          ],
+          "score": 4.7512,
+          "support": 13,
+          "count": 163,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 357,
+          "title": "One Flew Over the Cuckoo's Nest (1975)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 4.3477,
+          "support": 20,
+          "count": 220,
+          "method": "collaborative",
+          "hit": false
+        }
+      ]
+    },
+    {
+      "user": 2,
+      "train_size": 50,
+      "test_size": 12,
+      "relevant_test": 8,
+      "metrics": {
+        "precision@10": 0.2,
+        "recall@10": 0.25,
+        "ndcg@10": 0.361879195385413
+      },
+      "history_sample": [
+        {
+          "title": "Mrs. Brown (Her Majesty, Mrs. Brown) (1997)",
+          "rating": 4
+        },
+        {
+          "title": "Air Force One (1997)",
+          "rating": 4
+        },
+        {
+          "title": "Bed of Roses (1996)",
+          "rating": 3
+        },
+        {
+          "title": "English Patient, The (1996)",
+          "rating": 4
+        },
+        {
+          "title": "Men in Black (1997)",
+          "rating": 4
+        }
+      ],
+      "recommendations": [
+        {
+          "id": 302,
+          "title": "L.A. Confidential (1997)",
+          "genres": [
+            "Crime",
+            "Noir",
+            "Mistério",
+            "Suspense"
+          ],
+          "score": 4.6276,
+          "support": 15,
+          "count": 232,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 124,
+          "title": "Lone Star (1996)",
+          "genres": [
+            "Drama",
+            "Mistério"
+          ],
+          "score": 4.6984,
+          "support": 12,
+          "count": 154,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 515,
+          "title": "Boot, Das (1981)",
+          "genres": [
+            "Ação",
+            "Drama",
+            "Guerra"
+          ],
+          "score": 4.9821,
+          "support": 8,
+          "count": 147,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 272,
+          "title": "Good Will Hunting (1997)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 4.7797,
+          "support": 9,
+          "count": 159,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 9,
+          "title": "Dead Man Walking (1995)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 4.3782,
+          "support": 13,
+          "count": 241,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 181,
+          "title": "Return of the Jedi (1983)",
+          "genres": [
+            "Ação",
+            "Aventura",
+            "Romance",
+            "Ficção científica",
+            "Guerra"
+          ],
+          "score": 4.1976,
+          "support": 14,
+          "count": 422,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 1137,
+          "title": "Beautiful Thing (1996)",
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "score": 5.0,
+          "support": 4,
+          "count": 24,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 173,
+          "title": "Princess Bride, The (1987)",
+          "genres": [
+            "Ação",
+            "Aventura",
+            "Comédia",
+            "Romance"
+          ],
+          "score": 4.7325,
+          "support": 7,
+          "count": 248,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 137,
+          "title": "Big Night (1996)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 4.3555,
+          "support": 9,
+          "count": 133,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 1142,
+          "title": "When We Were Kings (1996)",
+          "genres": [
+            "Documentário"
+          ],
+          "score": 4.7815,
+          "support": 5,
+          "count": 38,
+          "method": "collaborative",
+          "hit": false
+        }
+      ]
+    },
+    {
+      "user": 3,
+      "train_size": 44,
+      "test_size": 10,
+      "relevant_test": 4,
+      "metrics": {
+        "precision@10": 0.0,
+        "recall@10": 0.0,
+        "ndcg@10": 0.0
+      },
+      "history_sample": [
+        {
+          "title": "L.A. Confidential (1997)",
+          "rating": 2
+        },
+        {
+          "title": "Wedding Singer, The (1998)",
+          "rating": 3
+        },
+        {
+          "title": "Schindler's List (1993)",
+          "rating": 4
+        },
+        {
+          "title": "In the Name of the Father (1993)",
+          "rating": 2
+        },
+        {
+          "title": "Paradise Lost: The Child Murders at Robin Hood Hills (1996)",
+          "rating": 5
+        }
+      ],
+      "recommendations": [
+        {
+          "id": 272,
+          "title": "Good Will Hunting (1997)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 3.6013,
+          "support": 18,
+          "count": 159,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 269,
+          "title": "Full Monty, The (1997)",
+          "genres": [
+            "Comédia"
+          ],
+          "score": 3.4473,
+          "support": 17,
+          "count": 258,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 50,
+          "title": "Star Wars (1977)",
+          "genres": [
+            "Ação",
+            "Aventura",
+            "Romance",
+            "Ficção científica",
+            "Guerra"
+          ],
+          "score": 3.6885,
+          "support": 15,
+          "count": 479,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 315,
+          "title": "Apt Pupil (1998)",
+          "genres": [
+            "Drama",
+            "Suspense"
+          ],
+          "score": 3.809,
+          "support": 11,
+          "count": 132,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 313,
+          "title": "Titanic (1997)",
+          "genres": [
+            "Ação",
+            "Drama",
+            "Romance"
+          ],
+          "score": 3.2697,
+          "support": 20,
+          "count": 291,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 127,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Ação",
+            "Crime",
+            "Drama"
+          ],
+          "score": 3.8237,
+          "support": 8,
+          "count": 340,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 306,
+          "title": "Mrs. Brown (Her Majesty, Mrs. Brown) (1997)",
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "score": 3.6422,
+          "support": 9,
+          "count": 78,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 100,
+          "title": "Fargo (1996)",
+          "genres": [
+            "Crime",
+            "Drama",
+            "Suspense"
+          ],
+          "score": 3.4985,
+          "support": 12,
+          "count": 419,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 204,
+          "title": "Back to the Future (1985)",
+          "genres": [
+            "Comédia",
+            "Ficção científica"
+          ],
+          "score": 3.586,
+          "support": 9,
+          "count": 281,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 276,
+          "title": "Leaving Las Vegas (1995)",
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "score": 3.6065,
+          "support": 9,
+          "count": 243,
+          "method": "collaborative",
+          "hit": false
+        }
+      ]
+    },
+    {
+      "user": 4,
+      "train_size": 20,
+      "test_size": 4,
+      "relevant_test": 1,
+      "metrics": {
+        "precision@10": 0.0,
+        "recall@10": 0.0,
+        "ndcg@10": 0.0
+      },
+      "history_sample": [
+        {
+          "title": "Mimic (1997)",
+          "rating": 3
+        },
+        {
+          "title": "Assignment, The (1997)",
+          "rating": 5
+        },
+        {
+          "title": "One Flew Over the Cuckoo's Nest (1975)",
+          "rating": 4
+        },
+        {
+          "title": "In & Out (1997)",
+          "rating": 5
+        },
+        {
+          "title": "Scream (1996)",
+          "rating": 4
+        }
+      ],
+      "recommendations": [
+        {
+          "id": 302,
+          "title": "L.A. Confidential (1997)",
+          "genres": [
+            "Crime",
+            "Noir",
+            "Mistério",
+            "Suspense"
+          ],
+          "score": 5.0,
+          "support": 18,
+          "count": 232,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 127,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Ação",
+            "Crime",
+            "Drama"
+          ],
+          "score": 5.0,
+          "support": 18,
+          "count": 340,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 313,
+          "title": "Titanic (1997)",
+          "genres": [
+            "Ação",
+            "Drama",
+            "Romance"
+          ],
+          "score": 5.0,
+          "support": 16,
+          "count": 291,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 100,
+          "title": "Fargo (1996)",
+          "genres": [
+            "Crime",
+            "Drama",
+            "Suspense"
+          ],
+          "score": 5.0,
+          "support": 14,
+          "count": 419,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 56,
+          "title": "Pulp Fiction (1994)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 5.0,
+          "support": 8,
+          "count": 316,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 887,
+          "title": "Eve's Bayou (1997)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 5.0,
+          "support": 7,
+          "count": 54,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 272,
+          "title": "Good Will Hunting (1997)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 5.0,
+          "support": 10,
+          "count": 159,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 603,
+          "title": "Rear Window (1954)",
+          "genres": [
+            "Mistério",
+            "Suspense"
+          ],
+          "score": 5.0,
+          "support": 7,
+          "count": 163,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 316,
+          "title": "As Good As It Gets (1997)",
+          "genres": [
+            "Comédia",
+            "Drama"
+          ],
+          "score": 5.0,
+          "support": 7,
+          "count": 93,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 705,
+          "title": "Singin' in the Rain (1952)",
+          "genres": [
+            "Musical",
+            "Romance"
+          ],
+          "score": 5.0,
+          "support": 8,
+          "count": 116,
+          "method": "collaborative",
+          "hit": false
+        }
+      ]
+    },
+    {
+      "user": 5,
+      "train_size": 140,
+      "test_size": 35,
+      "relevant_test": 11,
+      "metrics": {
+        "precision@10": 0.3,
+        "recall@10": 0.2727272727272727,
+        "ndcg@10": 0.388244052766991
+      },
+      "history_sample": [
+        {
+          "title": "Adventures of Priscilla, Queen of the Desert, The (1994)",
+          "rating": 5
+        },
+        {
+          "title": "Blues Brothers, The (1980)",
+          "rating": 5
+        },
+        {
+          "title": "Beverly Hills Cop III (1994)",
+          "rating": 2
+        },
+        {
+          "title": "Body Snatcher, The (1945)",
+          "rating": 3
+        },
+        {
+          "title": "Santa Clause, The (1994)",
+          "rating": 1
+        }
+      ],
+      "recommendations": [
+        {
+          "id": 50,
+          "title": "Star Wars (1977)",
+          "genres": [
+            "Ação",
+            "Aventura",
+            "Romance",
+            "Ficção científica",
+            "Guerra"
+          ],
+          "score": 4.4026,
+          "support": 29,
+          "count": 479,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 195,
+          "title": "Terminator, The (1984)",
+          "genres": [
+            "Ação",
+            "Ficção científica",
+            "Suspense"
+          ],
+          "score": 3.696,
+          "support": 29,
+          "count": 238,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 96,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": [
+            "Ação",
+            "Ficção científica",
+            "Suspense"
+          ],
+          "score": 3.7742,
+          "support": 26,
+          "count": 232,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 183,
+          "title": "Alien (1979)",
+          "genres": [
+            "Ação",
+            "Terror",
+            "Ficção científica",
+            "Suspense"
+          ],
+          "score": 3.602,
+          "support": 29,
+          "count": 231,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 64,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 3.951,
+          "support": 20,
+          "count": 226,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 22,
+          "title": "Braveheart (1995)",
+          "genres": [
+            "Ação",
+            "Drama",
+            "Guerra"
+          ],
+          "score": 3.765,
+          "support": 23,
+          "count": 247,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 169,
+          "title": "Wrong Trousers, The (1993)",
+          "genres": [
+            "Animação",
+            "Comédia"
+          ],
+          "score": 4.3568,
+          "support": 12,
+          "count": 86,
+          "method": "collaborative",
+          "hit": true
+        },
+        {
+          "id": 210,
+          "title": "Indiana Jones and the Last Crusade (1989)",
+          "genres": [
+            "Ação",
+            "Aventura"
+          ],
+          "score": 3.4454,
+          "support": 33,
+          "count": 263,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 483,
+          "title": "Casablanca (1942)",
+          "genres": [
+            "Drama",
+            "Romance",
+            "Guerra"
+          ],
+          "score": 3.9851,
+          "support": 16,
+          "count": 194,
+          "method": "collaborative",
+          "hit": false
+        },
+        {
+          "id": 127,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Ação",
+            "Crime",
+            "Drama"
+          ],
+          "score": 3.6437,
+          "support": 23,
+          "count": 340,
+          "method": "collaborative",
+          "hit": false
+        }
+      ]
+    }
+  ],
+  "cold_start": [
+    {
+      "id": 318,
+      "title": "Schindler's List (1993)",
+      "genres": [
+        "Drama",
+        "Guerra"
+      ],
+      "score": 4.4111,
+      "support": 0,
+      "count": 237,
+      "method": "fallback"
+    },
+    {
+      "id": 483,
+      "title": "Casablanca (1942)",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Guerra"
+      ],
+      "score": 4.3769,
+      "support": 0,
+      "count": 194,
+      "method": "fallback"
+    },
+    {
+      "id": 64,
+      "title": "Shawshank Redemption, The (1994)",
+      "genres": [
+        "Drama"
+      ],
+      "score": 4.3685,
+      "support": 0,
+      "count": 226,
+      "method": "fallback"
+    },
+    {
+      "id": 50,
+      "title": "Star Wars (1977)",
+      "genres": [
+        "Ação",
+        "Aventura",
+        "Romance",
+        "Ficção científica",
+        "Guerra"
+      ],
+      "score": 4.328,
+      "support": 0,
+      "count": 479,
+      "method": "fallback"
+    },
+    {
+      "id": 169,
+      "title": "Wrong Trousers, The (1993)",
+      "genres": [
+        "Animação",
+        "Comédia"
+      ],
+      "score": 4.3269,
+      "support": 0,
+      "count": 86,
+      "method": "fallback"
+    },
+    {
+      "id": 12,
+      "title": "Usual Suspects, The (1995)",
+      "genres": [
+        "Crime",
+        "Suspense"
+      ],
+      "score": 4.2806,
+      "support": 0,
+      "count": 214,
+      "method": "fallback"
+    },
+    {
+      "id": 603,
+      "title": "Rear Window (1954)",
+      "genres": [
+        "Mistério",
+        "Suspense"
+      ],
+      "score": 4.2659,
+      "support": 0,
+      "count": 163,
+      "method": "fallback"
+    },
+    {
+      "id": 98,
+      "title": "Silence of the Lambs, The (1991)",
+      "genres": [
+        "Drama",
+        "Suspense"
+      ],
+      "score": 4.2534,
+      "support": 0,
+      "count": 318,
+      "method": "fallback"
+    },
+    {
+      "id": 127,
+      "title": "Godfather, The (1972)",
+      "genres": [
+        "Ação",
+        "Crime",
+        "Drama"
+      ],
+      "score": 4.2518,
+      "support": 0,
+      "count": 340,
+      "method": "fallback"
+    },
+    {
+      "id": 408,
+      "title": "Close Shave, A (1995)",
+      "genres": [
+        "Animação",
+        "Comédia",
+        "Suspense"
+      ],
+      "score": 4.2468,
+      "support": 0,
+      "count": 88,
+      "method": "fallback"
+    }
+  ]
+}
